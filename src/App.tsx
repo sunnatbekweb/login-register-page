@@ -31,8 +31,10 @@ function App() {
         <input
           type="email"
           name="email"
+          placeholder="Enter your email address"
           value={formData.email}
           onChange={handleChange}
+          required
         />
       </label>
       <br />
@@ -41,8 +43,10 @@ function App() {
         <input
           type="password"
           name="password"
+          placeholder="Enter your password"
           value={formData.password}
           onChange={handleChange}
+          required
         />
       </label>
       <br />

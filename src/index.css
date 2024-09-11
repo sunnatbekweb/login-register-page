@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 320px;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+  
+  & label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+
+    & input {
+      padding: 6px 12px;
+      border-radius: 5px;
+      background: #ffffff;
+      color: #000000;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: normal;
+      border: 1px solid #888888;
+
+      &::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+        color: #888888;
+      }
+    }
+  }
+}
