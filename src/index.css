@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -34,6 +37,7 @@ form {
     line-height: 150%;
     text-align: center;
     margin-bottom: 20px;
+    color: #ffffff;
   }
 
   & label {
@@ -44,6 +48,7 @@ form {
     font-weight: 500;
     line-height: 150%;
     row-gap: 6px;
+    color: #ffffff;
 
     & input {
       padding: 6px 12px;
@@ -62,7 +67,7 @@ form {
       &::placeholder {
         font-size: 14px;
         font-weight: 400;
-        color: #000000;
+        color: #383838;
       }
     }
   }
