@@ -26,6 +26,7 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
       <label>
         Email:
         <input
