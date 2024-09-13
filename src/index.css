@@ -8,6 +8,11 @@
   font-family: "Inter", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 body {
   background-image: url(./assets/images/painting-mountain-lake.jpg);
   background-position: 0 0;
@@ -72,6 +77,41 @@ form {
     }
   }
 
+  .remember_forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+
+    & label {
+      width: fit-content;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 8px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      & input {
+        scale: 120%;
+        accent-color: #025d74;
+      }
+    }
+
+    & a {
+      width: fit-content;
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
   button {
     font-size: 16px;
     line-height: 150%;
@@ -88,6 +128,24 @@ form {
       border: 1px solid #ffffff;
       color: #000000;
       background: transparent;
+    }
+  }
+
+  .noAccount {
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+    & a {
+      font-weight: 600;
+      transition: opacity 0.2s linear;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 }

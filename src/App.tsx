@@ -51,7 +51,17 @@ function App() {
         />
       </label>
       <br />
+      <div className="remember_forget">
+        <label>
+          <input type="checkbox" name="remember" id="remember" />
+          Remember me
+        </label>
+        <a href="#!">Forget password?</a>
+      </div>
       <button type="submit">Submit</button>
+      <p  className="noAccount">
+        Dont have an account? <a href="#!">Register</a>
+      </p>
     </form>
   );
 }
