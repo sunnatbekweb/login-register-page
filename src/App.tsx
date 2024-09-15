@@ -6,22 +6,22 @@ interface FormData {
 }
 
 function App() {
-  const [formData, setFormData] = useState<FormData>({
+  const [loginData, setLoginData] = useState<FormData>({
     email: "",
     password: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    setLoginData({
+      ...loginData,
+      [name]:value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(loginData);
   };
 
   return (
@@ -33,8 +33,8 @@ function App() {
           type="email"
           name="email"
           placeholder="Enter your email address"
-          value={formData.email}
-          onChange={handleChange}
+          value={loginData.email}
+          onChange={handleLoginChange}
           required
         />
       </label>
@@ -45,8 +45,8 @@ function App() {
           type="password"
           name="password"
           placeholder="Enter your password"
-          value={formData.password}
-          onChange={handleChange}
+          value={loginData.password}
+          onChange={handleLoginChange}
           required
         />
       </label>
