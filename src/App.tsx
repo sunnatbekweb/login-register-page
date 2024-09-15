@@ -45,7 +45,11 @@ function App() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(loginData);
+    if (page === "login") {
+      console.log("Login data: ", loginData);
+    } else {
+      console.log("Register data: ", registerData);
+    }
   };
 
   const handlePageChange = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -78,8 +82,8 @@ function App() {
           type="email"
           name="email"
           placeholder="Enter your email address"
-          value={loginData.email}
-          onChange={handleLoginChange}
+          value={page === "login" ? loginData.email : registerData.email}
+          onChange={page === "login" ? handleLoginChange : handleRegisterChange}
           required
         />
       </label>
@@ -90,8 +94,8 @@ function App() {
           type="password"
           name="password"
           placeholder="Enter your password"
-          value={loginData.password}
-          onChange={handleLoginChange}
+          value={page === "login" ? loginData.password : registerData.password}
+          onChange={page === "login" ? handleLoginChange : handleRegisterChange}
           required
         />
       </label>
@@ -121,16 +125,16 @@ function App() {
       </div>
       <button type="submit">Submit</button>
       {page === "login" ? (
-        <p className="noAccount">
-          Dont have an account? <div data-page="register" onClick={handlePageChange}>Register</div>
-        </p>
+        <div className="noAccount">
+          Don't have an account? <div data-page="register" onClick={handlePageChange}>Register</div>
+        </div>
       ) : (
-        <p className="noAccount">
-          Allready have an account? <div data-page="login" onClick={handlePageChange}>Login</div>
-        </p>
+        <div className="noAccount">
+          Already have an account? <div data-page="login" onClick={handlePageChange}>Login</div>
+        </div>
       )}
     </form>
-  );
+  ); 
 }
 
 export default App;
