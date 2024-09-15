@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface LoginFormData {
   email: string;
@@ -25,7 +25,15 @@ function App() {
     confirmPassword: "",
   });
 
-  const [page, setPage] = useState<string | undefined>("login");
+  const [page, setPage] = useState<string | undefined>(
+    () => localStorage.getItem("page") || "login"
+  );
+
+  useEffect(() => {
+    if (page) {
+      localStorage.setItem("page", page);
+    }
+  }, [page]);
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -126,15 +134,21 @@ function App() {
       <button type="submit">Submit</button>
       {page === "login" ? (
         <div className="noAccount">
-          Don't have an account? <div data-page="register" onClick={handlePageChange}>Register</div>
+          Don't have an account?{" "}
+          <div data-page="register" onClick={handlePageChange}>
+            Register
+          </div>
         </div>
       ) : (
         <div className="noAccount">
-          Already have an account? <div data-page="login" onClick={handlePageChange}>Login</div>
+          Already have an account?{" "}
+          <div data-page="login" onClick={handlePageChange}>
+            Login
+          </div>
         </div>
       )}
     </form>
-  ); 
+  );
 }
 
 export default App;
